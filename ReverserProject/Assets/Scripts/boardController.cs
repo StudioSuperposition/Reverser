@@ -11,7 +11,12 @@ public class boardController : MonoBehaviour
     }
     public void moveHighlight()
     {
+        //if true highlight black's moves if false inverse
+        bool checkBlack = GameObject.Find("GameMaster").GetComponent<gameMasterScript>().blackTurn;
+        if(checkBlack)
+        {
 
+        }
     }
     public void flipOwner()
     {
@@ -21,6 +26,18 @@ public class boardController : MonoBehaviour
             if(GameObject.Find("GameMaster").GetComponent<gameMasterScript>().blackTurn)
             {
                 this.gameObject.GetComponent<Image>().color = Color.black;
+            }
+            else
+            {
+                gameObject.GetComponent<Image>().color = Color.white;
+            }
+            GameObject.Find("GameMaster").GetComponent<gameMasterScript>().turnTick();
+        }
+        else
+        {
+            if(gameObject.GetComponent<Image>().color == Color.white)
+            {
+                gameObject.GetComponent<Image>().color = Color.black;
             }
             else
             {
