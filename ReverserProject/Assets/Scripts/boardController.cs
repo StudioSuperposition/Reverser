@@ -16,7 +16,7 @@ public class boardController : MonoBehaviour
     public void flipOwner()
     {
         Debug.Log("This object is " + this.gameObject);
-        /*if(this.gameObject.GetComponent<Image>().isActiveAndEnabled)
+        if(gameObject.GetComponent<Image>().color == Color.green)
         {
             if(GameObject.Find("GameMaster").GetComponent<gameMasterScript>().blackTurn)
             {
@@ -26,6 +26,6 @@ public class boardController : MonoBehaviour
             {
                 gameObject.GetComponent<Image>().color = Color.white;
             }
-        }*/
+        }
     }
 }
